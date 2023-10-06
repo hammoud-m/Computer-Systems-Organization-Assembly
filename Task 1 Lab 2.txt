@@ -1,0 +1,19 @@
+1 - Step over: It will step over a given line. If the line contains a function the function will be executed 
+               and the result returned without debugging each line. The currently-selected line is executed 
+	       and suspends on the next executable.
+
+    Step into: Step Into The next expression on the currently-selected line to be executed is invoked, and execution 
+               suspends at the next executable line in the method that is invoked.
+
+2 - 0x20008000
+
+3 - Yes, (PUSH R2)
+
+4 - 0x20007FFC, it grows from up to down
+
+5 - s
+
+6 - 0x200702E9 = e7, link register ,(return value)
+
+7 - 0x000802C2, it jumps to 0x000802DC
+

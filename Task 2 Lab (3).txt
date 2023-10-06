@@ -1,0 +1,29 @@
+1. What happens to the stack in the event of SysTick interrupt?
+it saves specific data in the stack
+
+2. What is saved on the stack in the event of SysTick interrupt?
+R0-R3. R12, PC, PSR, LR
+
+3. What is in the LR register when the SysTick interrupt handler is executing, and what
+does it mean?
+0xFFFFFFF9, EXC_RETURN
+
+4. What instruction causes the SysTick interrupt to end, i.e. how do you return to the main
+program?
+BX LR
+
+5. Where is the return address stored?
+in the stack
+
+6. What are the shared resources between the main program and the SysTick Handler?
+R6
+7. What is the maximum value that the Binary counter of the main program reaches?
+Why?
+
+8. Do you recognise any sensitive code section in this program? Where is it?
+Yes, CMP R6, #0x0
+     SUB R6, R0, R3
+
+9. If you recognise a sensitive code section in your program, How can you protect it? (Hint:
+Do not use PUSH and POP)
+disable interrupts before using R6 in loop & enable it after it.

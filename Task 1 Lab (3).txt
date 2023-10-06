@@ -1,0 +1,20 @@
+1. What is the maximum value that the SysTick counter can start counting down from?
+(2-^24)-1 = 16777215
+
+2. What are the addresses of the CTRL, LOAD and VAL registers?
+CTRL, 0xE000E010
+LOAD, 0xE000E014
+VAL 0xE000E018
+
+3. To use register names (CTRL, LOAD and VAL) in my assembly code, how to define
+them? (Hint : EQU)
+SYSTICK_CTRL EQU 0xE000E010
+SYSTICK_LOAD EQU 0xE000E014
+SYSTICK_VAL EQU 0xE000E018
+
+4. What is the value to be written in the LOAD register to activate the SysTick interrupt
+every 2 ms, in case the Clock Source is 12MHz?
+LOAD value = (12000000 X 0,002) - 1 = 23999
+
+5. What are the clock sources that you choose from to configure the SysTick?
+CLKSOURCE, TICKINT, ENABLE.
